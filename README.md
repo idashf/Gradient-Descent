@@ -36,11 +36,7 @@ with true parameters:
 
 A standard Gradient Descent algorithm is implemented to learn parameters \(m\) and \(b\).
 
-### 🔹 Cost Reduction (Start & End of Training)
-
-![Step 1 Plots](images/Gradient_Descent_step1.png)
-
-### 🔹 Data & Model Comparison
+### 🔹 Cost Reduction (Start & End of Training) and Data & Model Comparison
 
 ![Model Fit](images/Gradien_Descent_step%201.png)
 
