@@ -3,25 +3,26 @@
 ---
 
 ##  Introduction
-The goal of this assignment is to implement and analyze the **Gradient Descent** algorithm for estimating the parameters of a linear model using randomly generated data.  
-Four experimental steps were designed to investigate the effect of several parameters on the learning process, including:
+This project focuses on implementing and analyzing the **Gradient Descent** algorithm for estimating the parameters of a linear model.  
+The experiments investigate how several factors influence convergence, including:
 
-- Number of samples (K)  
-- Noise level (a)  
-- Learning rate (α)  
-- Tolerance  
-- Number of iterations  
+- Number of samples (K)
+- Noise level (a)
+- Learning rate (α)
+- Tolerance
+- Number of iterations
 
-The implementation was done in **Python**, using the following libraries:
+Python was used along with the following libraries:
 
-- **NumPy** – numerical computations, gradient calculation, random data generation  
-- **Matplotlib** – plotting and visualization  
-- **Math** – basic numerical formatting  
+- **NumPy** – numerical computations  
+- **Matplotlib** – visualization  
+- **Math** – numerical formatting  
 
 ---
 
-##  Step 1 — Sample Generation & Basic Gradient Descent
-Random data was generated based on a linear model:
+#  Step 1 — Sample Generation & Basic Gradient Descent
+
+We generate synthetic data based on:
 
 \[
 y = mx + b + \text{noise}
@@ -29,87 +30,108 @@ y = mx + b + \text{noise}
 
 with true parameters:
 
-- \( m = 8 \)  
-- \( b = 4 \)
+- **m = 8**
+- **b = 4**
+- **noise ∼ N(0, 0.1)**
 
-Noise was drawn from a normal distribution with mean 0 and standard deviation 0.1.
+A standard Gradient Descent algorithm is implemented to learn parameters \(m\) and \(b\).
 
-Gradient Descent was implemented to estimate these parameters.  
-The algorithm includes:
+### 🔹 Cost Reduction (Start & End of Training)
 
-- Defining the MSE cost function  
-- Computing gradients w.r.t. \(m\) and \(b\)  
-- Updating parameters iteratively  
+![Step 1 Plots](images/Gradient_Descent_step1.png)
 
-The model successfully converged to the true parameters using an appropriate learning rate and sufficient iterations.  
-Plots were generated showing:
+### 🔹 Data & Model Comparison
 
-- Cost decrease at the beginning and end of training  
-- Comparison between the true line and the estimated line  
+![Model Fit](images/Gradien_Descent_step%201.png)
+
+The model successfully converges to the true parameter values when an appropriate learning rate and enough iterations are used.
 
 ---
 
-##  Step 2 — Effect of Number of Samples (K) & Tolerance
-To analyze the effect of dataset size, four values of \(K\) were tested:
+# Step 2 — Effect of Number of Samples (K) & Tolerance
+
+We test four dataset sizes:
 K = 50, 500, 5000, 100000
 
-For each K, learning rate, tolerance, and number of iterations were tuned individually to avoid divergence and ensure smooth convergence.
-
-### Key findings:
-- Increasing **K** leads to more **stable convergence**.  
-- Larger K results in **smaller final error**.  
-- However, larger datasets require a **smaller learning rate** and more computation time.  
-
-A logarithmic plot of cost during the first 500 iterations was used to compare all values of K.
+Each setting includes a tuned learning rate and tolerance.
 
 ---
 
-##  Step 3 — Effect of Noise Level (a)
-This step evaluated the sensitivity of Gradient Descent to noise in the data.  
-Three noise values were tested:
+### 🔹 Cost Convergence Over All Iterations
+
+![K Comparison Full](images/cost_comparison_Ks_subplots.png)
+
+---
+
+### 🔹 First 500 Iterations (Log Scale)
+
+![K Comparison Log](images/step2_k_tolerance_comparison_log.png)
+
+---
+
+### 🔹 Subplot Comparison
+
+![K Comparison Subplots](images/step2_k_tolerance_comparison_subplots.png)
+
+---
+
+### ✔ Key Findings
+- Larger **K** → more stable convergence  
+- Larger datasets → smaller learning rate needed  
+- Higher K improves final error but increases training time  
+
+---
+
+#  Step 3 — Effect of Noise Level (a)
+
+We evaluate:
+
 a = 0.1, 0.3, 0.5
 
-with \(K = 500\).
+with fixed:
 
-### Observations:
-- Higher noise → higher initial cost  
+K = 500
+
+---
+
+### 🔹 Full Convergence & Zoomed Plot
+
+![Noise Comparison](images/step3_noise_comparison_combined.png)
+
+---
+
+### ✔ Observations
+- Larger noise → higher starting cost  
 - Convergence becomes slower and less stable  
-- Zoomed-in plots (iterations 100–300) show this effect more clearly  
+- Differences are most visible between iterations 100–300  
 
 ---
 
-##  Step 4 — Final Interpretation
-The assignment concluded with the question:
+#  Step 4 — Conceptual Interpretation
 
-> **Which parameter has the greatest impact on accurately estimating the model parameters?**
+The final question:  
+ *Which factor has the greatest impact on accurate parameter estimation?*
 
-Options included:
+### ✔ Correct Answer: **Learning Rate (α)**
 
-- Number of samples  
-- Number of iterations  
-- Tolerance  
-- Learning rate  
+- Too large → divergence  
+- Too small → extremely slow convergence  
 
-###  Correct answer: **Learning Rate**
-
-A learning rate that is too large → divergence  
-A learning rate that is too small → extremely slow learning  
-
-Thus, selecting a proper learning rate plays the most critical role in the success of Gradient Descent.
+Thus, proper tuning of α is the most critical part of Gradient Descent.
 
 ---
 
-##  Conclusion
-In this assignment:
+#  Final Conclusion
 
-- Gradient Descent was fully implemented from scratch  
-- The influence of dataset size, noise, tolerance, and learning rate was systematically studied  
-- Experiments showed that although many factors affect learning performance, the **learning rate** has the most significant impact on achieving stable and accurate convergence  
+This project demonstrates:
 
-This assignment offered hands-on experience and deeper intuition about optimization algorithms in machine learning.
+- Full implementation of Gradient Descent  
+- Influence of dataset size, noise, tolerance, and learning rate  
+- Visual comparison of convergence behaviors  
+
+Despite multiple contributing factors, **learning rate** is the key element determining whether Gradient Descent succeeds or fails.
 
 ---
-
 
 
 
