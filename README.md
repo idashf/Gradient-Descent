@@ -2,7 +2,7 @@
 
 ---
 
-## 📌 Introduction
+##  Introduction
 The goal of this assignment is to implement and analyze the **Gradient Descent** algorithm for estimating the parameters of a linear model using randomly generated data.  
 Four experimental steps were designed to investigate the effect of several parameters on the learning process, including:
 
@@ -20,7 +20,7 @@ The implementation was done in **Python**, using the following libraries:
 
 ---
 
-## 🚀 Step 1 — Sample Generation & Basic Gradient Descent
+##  Step 1 — Sample Generation & Basic Gradient Descent
 Random data was generated based on a linear model:
 
 \[
@@ -49,7 +49,7 @@ Plots were generated showing:
 
 ---
 
-## 📊 Step 2 — Effect of Number of Samples (K) & Tolerance
+##  Step 2 — Effect of Number of Samples (K) & Tolerance
 To analyze the effect of dataset size, four values of \(K\) were tested:
 K = 50, 500, 5000, 100000
 
@@ -64,7 +64,7 @@ A logarithmic plot of cost during the first 500 iterations was used to compare a
 
 ---
 
-## 🔉 Step 3 — Effect of Noise Level (a)
+##  Step 3 — Effect of Noise Level (a)
 This step evaluated the sensitivity of Gradient Descent to noise in the data.  
 Three noise values were tested:
 a = 0.1, 0.3, 0.5
@@ -78,7 +78,7 @@ with \(K = 500\).
 
 ---
 
-## 🧠 Step 4 — Final Interpretation
+##  Step 4 — Final Interpretation
 The assignment concluded with the question:
 
 > **Which parameter has the greatest impact on accurately estimating the model parameters?**
@@ -90,7 +90,7 @@ Options included:
 - Tolerance  
 - Learning rate  
 
-### ✅ Correct answer: **Learning Rate**
+###  Correct answer: **Learning Rate**
 
 A learning rate that is too large → divergence  
 A learning rate that is too small → extremely slow learning  
@@ -99,7 +99,7 @@ Thus, selecting a proper learning rate plays the most critical role in the succe
 
 ---
 
-## 🏁 Conclusion
+##  Conclusion
 In this assignment:
 
 - Gradient Descent was fully implemented from scratch  
